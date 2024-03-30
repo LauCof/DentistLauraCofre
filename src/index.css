@@ -128,23 +128,40 @@ body[data-theme="light"] {
 
 footer {
   background-color: hsl(0, 87%, 50%);
-  padding: 50 px 0;
-  text-align:justify;
+  padding: 50 px;
+  height: 40px;
+}
+
+.espacio {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: blue;
+  color: #0e0d0d;
+  padding: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: hsl(0, 87%, 50%);
+  
 }
 
 .social-icons {
   display:inline-flexbox;
+ 
 }
 
 .social-icons a {
   margin: 0 20px; 
   display: inline-block;
+  
 }
 
-.social-icons img {
+.social-icons a img {
   width: 30px;
   height: auto;
 }
+
 
 
 .navbar {
@@ -173,32 +190,6 @@ footer {
   padding: 10px 20px;
 }
 
-.theme-toggle {
-  position: relative;
-  width: 60px;
-  height: 30px;
-  background-color: #ccc;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-.theme-toggle .slider {
-  position: absolute;
-  top: 2px;
-  width: 26px;
-  height: 26px;
-  background-color: #fff;
-  border-radius: 50%;
-  transition: left 0.3s ease;
-}
-
-.theme-toggle.light .slider {
-  left: 2px;
-}
-
-.theme-toggle.dark .slider {
-  left: calc(100% - 28px);
-}
 
 
 /* App.css */
@@ -214,4 +205,36 @@ footer {
 .dark {
   background-color: #333;
   color: #fff;
+}
+
+
+
+
+
+/* Estilos para el tema light */
+.light {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.light .navbar {
+  background-color: #e9ecef;
+}
+
+.light .footer {
+  background-color: #e9ecef;
+}
+
+/* Estilos para el tema dark */
+.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark .navbar {
+  background-color: #555;
+}
+
+.dark .footer {
+  background-color: #555;
 }

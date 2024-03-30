@@ -9,11 +9,9 @@ import React, {useState} from "react";
 import './index.css'
 
 function App() {
+  
   return (
       <>
-      <div className="boton-theme">
-        <button>Change theme</button>
-      </div>
         <Navbar/>
         <Routes>
           <Route path='/' element={<Home/>}/>
@@ -23,6 +21,7 @@ function App() {
           <Route path='*' element={<h1>Página no encontrada...</h1>}/>
         </Routes>
           <Footer/>
+        
       </>
   );
 }

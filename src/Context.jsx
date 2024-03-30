@@ -4,15 +4,16 @@ import { reducer } from './reducers/reducer'
 
 const DentistStates = createContext()
 const lsFavs = JSON.parse(localStorage.getItem('favs'))
+
 const initialState = {
     favs: lsFavs || [], 
     list: [],
-    theme: "light" | "dark", 
+    theme: theme.light,
 } 
-
 
 const Context = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState)
+    const {theme} = state
 
     useEffect(() => {
         axios('https://jsonplaceholder.typicode.com/users')
@@ -26,8 +27,15 @@ const Context = ({children}) => {
         localStorage.setItem('favs', JSON.stringify(state.favs))
     }, [state.favs])
 
+    const toggleTheme = () => {
+        dispatch({
+          type: "TOGGLE_THEME",
+          payload: state.theme === themes.light ? themes.dark : themes.light,
+        });
+      };
+
     return(
-        <DentistStates.Provider value={{state, dispatch}}>
+        <DentistStates.Provider value={{state: {...state, theme}, dispatch, toggleTheme}}>
             {children}
         </DentistStates.Provider>
     )

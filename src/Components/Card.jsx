@@ -3,11 +3,12 @@ import {Link} from "react-router-dom"
 import { useDentistStates } from "../Context";
 
 const Card = ({item}) => {
+
 const {dispatch} = useDentistStates()
 const {name, username, id} = item
   
-const addFav= ()=> {
-dispatch({ type: "ADD_FAVS", payload: item });
+const addFav= (dentista)=> {
+  dispatch({ type: "ADD_FAVS", payload: item });
 }
 
   return (
