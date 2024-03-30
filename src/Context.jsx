@@ -3,13 +3,13 @@ import {createContext, useContext, useEffect, useReducer} from 'react'
 import { reducer } from './reducers/reducer'
 
 const DentistStates = createContext()
-
 const lsFavs = JSON.parse(localStorage.getItem('favs'))
 const initialState = {
     favs: lsFavs || [], 
     list: [],
-    theme: "", 
+    theme: "light" | "dark", 
 } 
+
 
 const Context = ({children}) => {
     const [state, dispatch] = useReducer(reducer, initialState)

@@ -5,6 +5,7 @@ export const reducer = (state, action) => {
         case 'ADD_FAVS': 
             return {...state, favs: [...state.favs, action.payload]}
         case 'CHANGE_THEME':
-            return {}
+            return {...state,
+                theme: state.theme === 'light' ? 'dark' : 'light'}
     }
 }

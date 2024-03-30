@@ -1,4 +1,3 @@
-
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import Home from "./Pages/Home";
@@ -7,12 +6,15 @@ import Contact from "./Pages/Contact";
 import Favs from "./Pages/Favs"
 import {Route, Routes} from "react-router-dom"
 import React, {useState} from "react";
+import './index.css'
 
 function App() {
-
   return (
       <>
-         <Navbar/>
+      <div className="boton-theme">
+        <button>Change theme</button>
+      </div>
+        <Navbar/>
         <Routes>
           <Route path='/' element={<Home/>}/>
           <Route path='/detail/:id' element={<Detail/>}/>
